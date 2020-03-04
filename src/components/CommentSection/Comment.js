@@ -4,14 +4,25 @@ import React from 'react';
 import './Comment.css';
 
 const Comment = props => {
+  
   return (
+
     <div className="comment-text">
-      <span className="user">{props.comment.username}</span>
-      {' '}
-      <span className="comment">{props.comment.text}</span>
+    
+    {props.comDatas.map((item, index)=>{
+      return(
+        <div key={index}>
+          <span  className="user">{item.username}</span>
+          
+          <span  className="comment">{item.text}</span>        
+        </div>
+      )
+    })}
+      
     </div>
   );
 };
 
 
 export default Comment;
+

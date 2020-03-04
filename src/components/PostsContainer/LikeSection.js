@@ -4,6 +4,10 @@
 import React from "react";
 
 const LikeSection = props => {
+
+  const LikeHandlerFn = () =>{
+    props.setLike(props.like + 1)
+  }
   return (
     <div>
     <div
@@ -11,15 +15,15 @@ const LikeSection = props => {
       key="likes-icons-container"
     >
       <div className="like-section-wrapper">
-        <i className="far fa-heart" />
+        <button onClick={LikeHandlerFn}><i className="far fa-heart fa-2x" /></button>
       </div>
       <div className="like-section-wrapper">
-        <i className="far fa-comment" />
+        <button><i className="far fa-comment fa-2x" /></button>
       </div>
     </div>
     <p className="like-number">
       
-      likes</p>
+      {props.like} likes</p>
 </div>
   )
 };
